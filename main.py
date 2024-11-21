@@ -75,7 +75,7 @@ class GrafoApp(QtWidgets.QMainWindow):
         self.dibujar_nodos_y_aristas(matriz)
 
     def obtener_matriz(self):
-        """Obtiene la matriz de pesos desde la interfaz."""
+        """Obtiene la matriz de pesos"""
         filas = self.ui.tableWidget.rowCount()
         columnas = self.ui.tableWidget.columnCount()
         matriz = []
@@ -89,7 +89,6 @@ class GrafoApp(QtWidgets.QMainWindow):
         return matriz
 
     def obtener_matriz_adyacencia(self):
-        """Convierte la matriz de pesos en una matriz binaria de adyacencia."""
         matriz_pesos = self.obtener_matriz()
         num_nodos = len(matriz_pesos)
         matriz_adyacencia = [[1 if matriz_pesos[i][j] > 0 else 0 for j in range(num_nodos)] for i in range(num_nodos)]
@@ -129,7 +128,7 @@ class GrafoApp(QtWidgets.QMainWindow):
                     self.ui.tableWidget.setItem(i, j, QtWidgets.QTableWidgetItem(str(valor_aleatorio)))
 
     def generar_matriz_adyacencia(self):
-        """Genera y muestra la matriz de adyacencia binaria."""
+        """Genera y muestra la matriz de adyacencia."""
         matriz_adyacencia = self.obtener_matriz_adyacencia()
         num_nodos = len(matriz_adyacencia)
 
