@@ -29,7 +29,7 @@ class GrafoApp(QtWidgets.QMainWindow):
         self.dibujar_nodos_y_aristas(matriz)
 
     def obtener_matriz(self):
-        """Obtiene la matriz de pesos desde la interfaz."""
+        """Obtiene la matriz de pesos"""
         filas = self.ui.tableWidget.rowCount()
         columnas = self.ui.tableWidget.columnCount()
         matriz = []
@@ -43,7 +43,6 @@ class GrafoApp(QtWidgets.QMainWindow):
         return matriz
 
     def obtener_matriz_adyacencia(self):
-        """Convierte la matriz de pesos en una matriz binaria de adyacencia."""
         matriz_pesos = self.obtener_matriz()
         num_nodos = len(matriz_pesos)
         matriz_adyacencia = [[1 if matriz_pesos[i][j] > 0 else 0 for j in range(num_nodos)] for i in range(num_nodos)]
@@ -76,7 +75,7 @@ class GrafoApp(QtWidgets.QMainWindow):
                     self.scene.addText(str(peso)).setPos(mid_x, mid_y)
 
     def generar_matriz_adyacencia(self):
-        """Genera y muestra la matriz de adyacencia binaria."""
+        """Genera y muestra la matriz de adyacencia"""
         matriz_adyacencia = self.obtener_matriz_adyacencia()
         num_nodos = len(matriz_adyacencia)
 
@@ -89,7 +88,7 @@ class GrafoApp(QtWidgets.QMainWindow):
                 self.ui.tableWidget_2.setItem(i, j, item)
 
     def encontrar_k_trayectorias(self, k):
-        """Calcula la matriz de trayectorias exactas de longitud k usando la matriz de adyacencia."""
+        """Calcula la matriz de trayectorias de longitud k"""
         matriz_adyacencia = self.obtener_matriz_adyacencia()  # Usar matriz binaria de adyacencia
 
         if k == 2:
