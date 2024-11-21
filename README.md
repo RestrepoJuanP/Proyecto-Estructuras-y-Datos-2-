@@ -17,4 +17,4 @@ Descripción:
 Este código implementa una aplicación gráfica para trabajar con grafos, permitiendo a los usuarios crear nodos y aristas basados 
 en una matriz de pesos en la interfaz.
 Los nodos se posicionan en una gráfica y se pueden mover. Además, la aplicación genera y muestra la matriz de 
-adyacencia, calcula trayectorias de longitud 2 o 3 usando álgebra matricial, y permite rellenar automáticamente la matriz de pesos con valores aleatorios. 
+adyacencia, calcula trayectorias de longitud 2 o 3 y permite rellenar automáticamente la matriz de pesos con valores aleatorios. 
